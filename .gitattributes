@@ -1,1 +1,2 @@
-* text=auto # Auto-detect text files and carry out LF normalization
+# Auto-detect text files and carry out LF normalization
+* text=auto
