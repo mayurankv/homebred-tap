@@ -88,6 +88,6 @@ class KanataTray < Formula
   end
 
   test do
-    system bin/"kanata-tray", "--version"
+    system "#{opt_bin}/kanata-tray --version"
   end
 end
