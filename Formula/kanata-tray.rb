@@ -72,19 +72,19 @@ class KanataTray < Formula
   #TODO: Update with https://github.com/dawidd6/action-homebrew-bump-formula or https://github.com/mislav/bump-homebrew-formula-action
   #TODO: Test with `brew audit --new --formula kanata-tray`, `HOMEBREW_NO_INSTALL_FROM_API=1 brew install --build-from-source --verbose --debug foo`
 
-  # service do
-  #   # sudo "/Library/Application Support/org.pqrs/Karabiner-DriverKit-VirtualHIDDevice/Applications/Karabiner-VirtualHIDDevice-Daemon.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Daemon"
-  #   # sudo kanata-tray
-  #   # run [opt_bin/"kanata-tray", "&", "/Library/Application Support/org.pqrs/Karabiner-DriverKit-VirtualHIDDevice/Applications/Karabiner-VirtualHIDDevice-Daemon.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Daemon"]
-  #   run ["sudo", opt_bin/"kanata-tray", "&", "sudo", "/Library/Application Support/org.pqrs/Karabiner-DriverKit-VirtualHIDDevice/Applications/Karabiner-VirtualHIDDevice-Daemon.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Daemon", "&", "wait"]
-  #   keep_alive true
-  #   require_root true
-  #   # process_type :interactive
-  #   # working_dir HOMEBREW_PREFIX
-  #   log_path var/"log/kanata-tray.log"
-  #   error_log_path var/"log/kanata-tray.log"
-  #   # sockets "tcp://127.0.0.1:5829"
-  # end
+  service do
+    # sudo "/Library/Application Support/org.pqrs/Karabiner-DriverKit-VirtualHIDDevice/Applications/Karabiner-VirtualHIDDevice-Daemon.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Daemon"
+    # sudo kanata-tray
+    # run [opt_bin/"kanata-tray", "&", "/Library/Application Support/org.pqrs/Karabiner-DriverKit-VirtualHIDDevice/Applications/Karabiner-VirtualHIDDevice-Daemon.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Daemon"]
+    run ["sudo", opt_bin/"kanata-tray", "&", "sudo", "/Library/Application Support/org.pqrs/Karabiner-DriverKit-VirtualHIDDevice/Applications/Karabiner-VirtualHIDDevice-Daemon.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Daemon", "&", "wait"]
+    keep_alive true
+    require_root true
+    # process_type :interactive
+    # working_dir HOMEBREW_PREFIX
+    log_path var/"log/kanata-tray.log"
+    error_log_path var/"log/kanata-tray.log"
+    # sockets "tcp://127.0.0.1:5829"
+  end
 
   test do
     system "#{opt_bin}/kanata-tray --version"
