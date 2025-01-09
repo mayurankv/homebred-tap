@@ -82,7 +82,7 @@ class KanataTray < Formula
     # sudo "/Library/Application Support/org.pqrs/Karabiner-DriverKit-VirtualHIDDevice/Applications/Karabiner-VirtualHIDDevice-Daemon.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Daemon"
     # sudo kanata-tray
     # run [opt_bin/"kanata-tray", "&", "/Library/Application Support/org.pqrs/Karabiner-DriverKit-VirtualHIDDevice/Applications/Karabiner-VirtualHIDDevice-Daemon.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Daemon"]
-    run ["echo", "$PATH","sudo", opt_bin/"kanata-tray"]
+    run ["echo", "$PATH", "&&","sudo", opt_bin/"kanata-tray"]
     keep_alive crashed: true
     require_root false
     process_type :interactive
