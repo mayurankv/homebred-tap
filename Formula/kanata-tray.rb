@@ -9,7 +9,7 @@ class KanataTray < Formula
   head "https://github.com/rszyma/kanata-tray.git", branch: "main"
 
   depends_on "kanata"
-  depends_on cask: "karabiner-elements"
+  # depends_on cask: "karabiner-elements"
 
   def install
     bin.install "kanata-tray-macos" => "kanata-tray"
@@ -22,12 +22,17 @@ class KanataTray < Formula
   # TODO: Needs rewriting
   def caveats
     <<~EOS
-      To ensure the Karabiner Virtual HID Device daemon can run, ensure that the Driver Extension is allowed by;
-
-        - Go to System Settings > General > Extensions > Driver Extensions
-        - Turn .Karabiner-VirtualHIDDevice-Manager.app on
+      Currently homebrew formulae are not able to depend on casks (which karabiner-elements is packages as).
+      kanata-tray runs kanata which depends on the Karabiner-VirtualHIDDevice-Daemon daemon so to ensure the service works as intended, install karabiner-elements via `brew install --cask karabiner-elements`.
+      Make sure karabiner-elements runs as intended with all permissions.
     EOS
   end
+
+      # To ensure the Karabiner Virtual HID Device daemon can run, ensure that the Driver Extension is allowed by;
+
+      #   - Go to System Settings > General > Extensions > Driver Extensions
+      #   - Turn .Karabiner-VirtualHIDDevice-Manager.app on
+
 
   # def plist
   #   <<~EOS
