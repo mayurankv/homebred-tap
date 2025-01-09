@@ -9,7 +9,7 @@ class KanataTray < Formula
   head "https://github.com/rszyma/kanata-tray.git", branch: "main"
 
   depends_on "kanata"
-  depends_on "karabiner-elements"
+  depends_on cask: "karabiner-elements"
 
   def install
     bin.install "kanata-tray-macos" => "kanata-tray"
