@@ -1,4 +1,4 @@
-class KanataTray < Formula
+class KanataTrayTest < Formula
   version "v0.5.2"
   sha256 "59fd53b0926ca64fbf59249a93f99cb90e7afdbe64d16dc65931974cdd00570e"
 
