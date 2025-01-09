@@ -11,6 +11,6 @@ class KanataTrayTest < Formula
   depends_on "kanata"
 
   def install
-    bin.install "kanata-tray-macos" => "kanata-tray"
+    bin.install "kanata-tray-macos" => "kanata-tray-test"
   end
 end
