@@ -9,16 +9,17 @@ class KanataTray < Formula
   head "https://github.com/rszyma/kanata-tray.git", branch: "main"
 
   depends_on "kanata"
+  depends_on "karabiner-elements"
 
   def install
     bin.install "kanata-tray-macos" => "kanata-tray"
   end
 
-  # #TODO: Does this work?
-  def post_install
-    system "/Applications/.Karabiner-VirtualHIDDevice-Manager.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Manager activate"
-  end
+  # def post_install
+  #   system "/Applications/.Karabiner-VirtualHIDDevice-Manager.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Manager activate"
+  # end
 
+  # TODO: Needs rewriting
   def caveats
     <<~EOS
       To ensure the Karabiner Virtual HID Device daemon can run, ensure that the Driver Extension is allowed by;
@@ -76,7 +77,7 @@ class KanataTray < Formula
     # sudo "/Library/Application Support/org.pqrs/Karabiner-DriverKit-VirtualHIDDevice/Applications/Karabiner-VirtualHIDDevice-Daemon.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Daemon"
     # sudo kanata-tray
     # run [opt_bin/"kanata-tray", "&", "/Library/Application Support/org.pqrs/Karabiner-DriverKit-VirtualHIDDevice/Applications/Karabiner-VirtualHIDDevice-Daemon.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Daemon"]
-    run ["sudo", opt_bin/"kanata-tray", "&", "sudo", "/Library/Application Support/org.pqrs/Karabiner-DriverKit-VirtualHIDDevice/Applications/Karabiner-VirtualHIDDevice-Daemon.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Daemon", "&", "wait"]
+    run [opt_bin/"kanata-tray"]
     keep_alive crashed: true
     require_root true
     process_type :interactive
