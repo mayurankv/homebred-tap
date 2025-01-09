@@ -87,7 +87,7 @@ class KanataTray < Formula
   #   # sockets "tcp://127.0.0.1:5829"
   # end
 
-  # test do
-  #   system "#{opt_bin}/kanata-tray --version"
-  # end
+  test do
+    system "#{opt_bin}/kanata-tray --version"
+  end
 end
