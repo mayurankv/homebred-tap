@@ -14,20 +14,20 @@ class KanataTray < Formula
     bin.install "kanata-tray-macos" => "kanata-tray"
   end
 
-  #TODO: Does this work?
-  def post_install
-    system "/Applications/.Karabiner-VirtualHIDDevice-Manager.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Manager activate"
-  end
+  # #TODO: Does this work?
+  # def post_install
+  #   system "/Applications/.Karabiner-VirtualHIDDevice-Manager.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Manager activate"
+  # end
 
-  #TODO: Does this work?
-  def caveats
-    <<~EOS
-      To ensure the Karabiner Virtual HID Device daemon can run, ensure that the Driver Extension is allowed by;
+  # #TODO: Does this work?
+  # def caveats
+  #   <<~EOS
+  #     To ensure the Karabiner Virtual HID Device daemon can run, ensure that the Driver Extension is allowed by;
 
-        - Go to System Settings > General > Extensions > Driver Extensions
-        - Turn .Karabiner-VirtualHIDDevice-Manager.app on
-    EOS
-  end
+  #       - Go to System Settings > General > Extensions > Driver Extensions
+  #       - Turn .Karabiner-VirtualHIDDevice-Manager.app on
+  #   EOS
+  # end
 
   # def plist
   #   <<~EOS
