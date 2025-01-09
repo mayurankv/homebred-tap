@@ -81,7 +81,7 @@ class KanataTray < Formula
     keep_alive true
     require_root true
     # process_type :interactive
-    working_dir HOMEBREW_PREFIX
+    # working_dir HOMEBREW_PREFIX
     log_path var/"log/kanata-tray.log"
     error_log_path var/"log/kanata-tray.log"
     # sockets "tcp://127.0.0.1:5829"
