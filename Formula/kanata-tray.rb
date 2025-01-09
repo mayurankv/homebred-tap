@@ -80,7 +80,7 @@ class KanataTray < Formula
     run ["sudo", opt_bin/"kanata-tray", "&", "sudo", "/Library/Application Support/org.pqrs/Karabiner-DriverKit-VirtualHIDDevice/Applications/Karabiner-VirtualHIDDevice-Daemon.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Daemon", "&", "wait"]
     keep_alive true
     require_root true
-    process_type :interactive
+    # process_type :interactive
     working_dir HOMEBREW_PREFIX
     log_path var/"log/kanata-tray.log"
     error_log_path var/"log/kanata-tray.log"
