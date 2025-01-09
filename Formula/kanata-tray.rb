@@ -16,7 +16,7 @@ class KanataTray < Formula
 
   #TODO: Does this work?
   def post_install
-    system "/Applications/.Karabiner-VirtualHIDDevice-Manager.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Manager", "activate"
+    system "/Applications/.Karabiner-VirtualHIDDevice-Manager.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Manager activate"
   end
 
   #TODO: Does this work?
